@@ -1,0 +1,12 @@
+﻿@using AppIdentity.Areas.Identity.Data
+@{
+    ViewData["Title"] = "Users";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Users</h1>
+
+@foreach(AppUser user in ViewBag.Users)
+{
+    <p>@user.FirstName</p>
+}
