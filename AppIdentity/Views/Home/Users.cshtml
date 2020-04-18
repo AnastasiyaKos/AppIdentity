@@ -9,6 +9,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>List of users</title>
+    <link rel="stylesheet" href="~/css/StyleSheet.css" />
 </head>
 <body>
     <h1>Users</h1>
@@ -32,38 +33,32 @@
                         <th scope="col">Block status</th>
                     </tr>
                 </thead>
-                <tbody class="info">
+                <tbody class="">
                     @foreach (AppUser user in ViewBag.Users)
                     {
-                    <tr>
-
-                        @if (user.Banned)
-                        {
-                            <td><input type="checkbox" name="checkedId" value="@user.Id" checked/></td>
-                            <td class="banned">@user.FirstName</td>
-                            <td class="banned">@user.LastName</td>
-                            <td class="banned">@user.Email</td>
-                            <td>Last login: @user.LastVisit</td>
-                            <td class="banned">@user.RegistrationDate</td>
-                            <td class="banned">BANNED</td>
-                        }
-                        else
-                        {
-                            <td><input type="checkbox" name="checkedId" value="@user.Id" /></td>
-                            <td class="banned">@user.FirstName</td>
-                            <td class="banned">@user.LastName</td>
-                            <td class="banned">@user.Email</td>
+                        <tr>
+                            <td><input type="checkbox" name="checkedId" value="@user.Id"/></td>
+                            <td class="info">@user.FirstName</td>
+                            <td class="info">@user.LastName</td>
+                            <td class="info">@user.Email</td>
                             @if (user.Status)
                             {
-                                <td class="">Online ;)</td>
+                                <td class="info">Online ;)</td>
                             }
                             else
                             {
                                 <td>Last login: @user.LastVisit</td>
                             }
-                            <td class="banned">@user.RegistrationDate</td>
-                        }
-                    </tr>
+                            <td class="info">@user.RegistrationDate</td>
+                            @if (user.Banned)
+                            {
+                                <td class="">Banned</td>
+                            }
+                            else
+                            {
+                                <td class="info"></td>
+                            }
+                        </tr>
                     }
                 </tbody>
             </table>

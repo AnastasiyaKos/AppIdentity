@@ -37,7 +37,12 @@ namespace AppIdentity.Controllers
 
         public IActionResult Index()
         {
-            return RedirectToPage("/Account/Login", new { area = "Identity" });
+            if(User.FindFirstValue(ClaimTypes.NameIdentifier) == null)
+            {
+                return RedirectToPage("/Account/Login", new { area = "Identity" });
+            } 
+
+            return RedirectToAction("Users");
         }
 
         public IActionResult Privacy()
@@ -79,7 +84,7 @@ namespace AppIdentity.Controllers
             {
                 if (checkedId.Contains(user.Id))
                 {
-                    _appUsersDbContext.Users.Find(user).Banned = true;
+                    _appUsersDbContext.Users.Update(user).Entity.Banned = true;
                     
                 }
             }
@@ -101,7 +106,7 @@ namespace AppIdentity.Controllers
             {
                 if (checkedId.Contains(user.Id))
                 {
-                    _appUsersDbContext.Users.Find(user).Banned = false;
+                    _appUsersDbContext.Users.Update(user).Entity.Banned = false;
                 }
             }
 
