@@ -9,60 +9,72 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>List of users</title>
-    <link rel="stylesheet" href="~/css/StyleSheet.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/userPage.css" />
 </head>
-<body>
-    <h1>Users</h1>
-    <div class="container">
-        <form id="allBoxes" method="post">
-            <button class="btn-delete" asp-action="Delete">Delete</button>
-            <button class="btn-block" asp-action="Block">Block</button>
-            <button class="btn-unblock" asp-action="Unblock">Unblock</button>
-            <button class="btn-logout" asp-action="Logout">Log out</button>
-            <table class="user-table">
-                <thead class="header-table">
-                    <tr class="column">
-                        <th scope="col">
-                            <input type="checkbox" onClick="checkAll()" id="mainCheck" />
-                        </th>
-                        <th scope="col">First name</th>
-                        <th scope="col">Last name</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Registration date</th>
-                        <th scope="col">Block status</th>
-                    </tr>
-                </thead>
-                <tbody class="">
-                    @foreach (AppUser user in ViewBag.Users)
-                    {
+<body class="user-page">
+    <div class="flex-conteiner">
+        <h1>List of users</h1>
+        <div class="container">
+            <form id="allBoxes" method="post">
+                
+                <table class="table">
+                    <thead class="thead-dark">
                         <tr>
-                            <td><input type="checkbox" name="checkedId" value="@user.Id"/></td>
-                            <td class="info">@user.FirstName</td>
-                            <td class="info">@user.LastName</td>
-                            <td class="info">@user.Email</td>
-                            @if (user.Status)
-                            {
-                                <td class="info">Online ;)</td>
-                            }
-                            else
-                            {
-                                <td>Last login: @user.LastVisit</td>
-                            }
-                            <td class="info">@user.RegistrationDate</td>
-                            @if (user.Banned)
-                            {
-                                <td class="">Banned</td>
-                            }
-                            else
-                            {
-                                <td class="info"></td>
-                            }
+                            <th scope="col">
+                                <input type="checkbox" onClick="checkAll()" id="mainCheck" />
+                            </th>
+                            <th scope="col">First name</th>
+                            <th scope="col">Last name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Registration date</th>
+                            <th scope="col">Block status</th>
+                            <th>
+                                <button type="button" class="btn btn-light" asp-action="Delete">Delete</button>
+                            </th>
+                            <th>
+                                <button type="button" class="btn btn-light" asp-action="Block">Block</button>
+                            </th>
+                            <th>
+                                <button type="button" class="btn btn-light" asp-action="Unblock">Unblock</button>
+                             </th>
+                            @*<th>
+                                <button type="button" class="btn btn-dark" asp-action="Logout">Log out</button>
+                            </th>*@
                         </tr>
-                    }
-                </tbody>
-            </table>
-        </form>
+                    </thead>
+                    <tbody class="">
+                        @foreach (AppUser user in ViewBag.Users)
+                        {
+                            <tr>
+                                <td><input type="checkbox" name="checkedId" value="@user.Id" /></td>
+                                <td class="info">@user.FirstName</td>
+                                <td class="info">@user.LastName</td>
+                                <td class="info">@user.Email</td>
+                                @if (user.Status)
+                                {
+                                    <td class="info">Online;)</td>
+                                }
+                                else
+                                {
+                                    <td>Last login: @user.LastVisit</td>
+                                }
+                                <td class="info">@user.RegistrationDate</td>
+                                @if (user.Banned)
+                                {
+                                    <td class="">Banned</td>
+                                }
+                                else
+                                {
+                                    <td class="info"></td>
+                                }
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </form>
+        </div>
     </div>
 </body>
 </html>
