@@ -92,7 +92,7 @@ namespace AppIdentity.Areas.Identity.Pages.Account
                 {
                     _userManager.Options.SignIn.RequireConfirmedAccount = false;
                     await _signInManager.SignInAsync(user, isPersistent: false);
-                    return LocalRedirect(returnUrl);
+                    return RedirectToAction("Users", "Home");
                 }
                 foreach (var error in result.Errors)
                 {
@@ -100,7 +100,6 @@ namespace AppIdentity.Areas.Identity.Pages.Account
                 }
             }
 
-            // If we got this far, something failed, redisplay form
             return Page();
         }
     }

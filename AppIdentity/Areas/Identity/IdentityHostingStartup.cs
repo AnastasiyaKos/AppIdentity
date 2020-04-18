@@ -8,8 +8,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-
-
 [assembly: HostingStartup(typeof(AppIdentity.Areas.Identity.IdentityHostingStartup))]
 namespace AppIdentity.Areas.Identity
 {

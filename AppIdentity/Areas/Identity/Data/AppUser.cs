@@ -24,6 +24,6 @@ namespace AppIdentity.Areas.Identity.Data
 
         public bool Status { get; set; }
 
-
+        public bool Banned { get; set; }
     }
 }

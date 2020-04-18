@@ -1,12 +1,73 @@
 ﻿@using AppIdentity.Areas.Identity.Data
 @{
-    ViewData["Title"] = "Users";
+    ViewData["Title"] = "List of users";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Users</h1>
 
-@foreach(AppUser user in ViewBag.Users)
-{
-    <p>@user.FirstName</p>
-}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>List of users</title>
+</head>
+<body>
+    <h1>Users</h1>
+    <div class="container">
+        <form id="allBoxes" method="post">
+            <button class="btn-delete" asp-action="Delete">Delete</button>
+            <button class="btn-block" asp-action="Block">Block</button>
+            <button class="btn-unblock" asp-action="Unblock">Unblock</button>
+            <button class="btn-logout" asp-action="Logout">Log out</button>
+            <table class="user-table">
+                <thead class="header-table">
+                    <tr class="column">
+                        <th scope="col">
+                            <input type="checkbox" onClick="checkAll()" id="mainCheck" />
+                        </th>
+                        <th scope="col">First name</th>
+                        <th scope="col">Last name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Registration date</th>
+                        <th scope="col">Block status</th>
+                    </tr>
+                </thead>
+                <tbody class="info">
+                    @foreach (AppUser user in ViewBag.Users)
+                    {
+                    <tr>
+
+                        @if (user.Banned)
+                        {
+                            <td><input type="checkbox" name="checkedId" value="@user.Id" checked/></td>
+                            <td class="banned">@user.FirstName</td>
+                            <td class="banned">@user.LastName</td>
+                            <td class="banned">@user.Email</td>
+                            <td>Last login: @user.LastVisit</td>
+                            <td class="banned">@user.RegistrationDate</td>
+                            <td class="banned">BANNED</td>
+                        }
+                        else
+                        {
+                            <td><input type="checkbox" name="checkedId" value="@user.Id" /></td>
+                            <td class="banned">@user.FirstName</td>
+                            <td class="banned">@user.LastName</td>
+                            <td class="banned">@user.Email</td>
+                            @if (user.Status)
+                            {
+                                <td class="">Online ;)</td>
+                            }
+                            else
+                            {
+                                <td>Last login: @user.LastVisit</td>
+                            }
+                            <td class="banned">@user.RegistrationDate</td>
+                        }
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,4 +1,1 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
-
-// Write your JavaScript code.
+﻿function checkAll() {    var checkboxes = new Array();    checkboxes = document.getElementById("allBoxes").getElementsByTagName('input');    for (var i = 0; i < checkboxes.length; i++) {        checkboxes[i].checked = document.getElementById("mainCheck").checked;    }}
