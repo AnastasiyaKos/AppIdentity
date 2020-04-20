@@ -26,8 +26,7 @@ namespace AppIdentity.Controllers
 
 
         public HomeController(ILogger<HomeController> logger, AppUsersDbContext appUsersDbContext, 
-            UserManager<AppUser> userManager, SignInManager<AppUser> signInManager
-)
+            UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
         {
             _logger = logger;
             _appUsersDbContext = appUsersDbContext;
