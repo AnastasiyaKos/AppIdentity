@@ -45,7 +45,6 @@ C:\Users\nasty\source\repos\AppIdentity\AppIdentity\obj\Debug\netcoreapp3.1\AppI
 C:\Users\nasty\source\repos\AppIdentity\AppIdentity\obj\Debug\netcoreapp3.1\AppIdentity.TagHelpers.output.cache
 C:\Users\nasty\source\repos\AppIdentity\AppIdentity\obj\Debug\netcoreapp3.1\AppIdentity.RazorCoreGenerate.cache
 C:\Users\nasty\source\repos\AppIdentity\AppIdentity\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\nasty\source\repos\AppIdentity\AppIdentity\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\nasty\source\repos\AppIdentity\AppIdentity\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\nasty\source\repos\AppIdentity\AppIdentity\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\nasty\source\repos\AppIdentity\AppIdentity\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -428,3 +427,4 @@ C:\Users\nasty\source\repos\AppIdentity\AppIdentity\obj\Debug\netcoreapp3.1\Razo
 C:\Users\nasty\source\repos\AppIdentity\AppIdentity\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
 C:\Users\nasty\source\repos\AppIdentity\AppIdentity\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
 C:\Users\nasty\source\repos\AppIdentity\AppIdentity\obj\Debug\netcoreapp3.1\Razor\Views\Home\Users.cshtml.g.cs
+C:\Users\nasty\source\repos\AppIdentity\AppIdentity\obj\Debug\netcoreapp3.1\Razor\Views\Home\Chat.cshtml.g.cs

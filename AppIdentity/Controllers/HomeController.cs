@@ -45,11 +45,6 @@ namespace AppIdentity.Controllers
             return RedirectToAction("Users");
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
         [Authorize]
         public IActionResult Users()
         {
@@ -85,7 +80,8 @@ namespace AppIdentity.Controllers
                 if (checkedId.Contains(user.Id))
                 {
                     _appUsersDbContext.Users.Update(user).Entity.Banned = true;
-                    
+                    _appUsersDbContext.Users.Update(user).Entity.Status = false;
+
                 }
             }
 
@@ -107,6 +103,7 @@ namespace AppIdentity.Controllers
                 if (checkedId.Contains(user.Id))
                 {
                     _appUsersDbContext.Users.Update(user).Entity.Banned = false;
+                    _appUsersDbContext.Users.Update(user).Entity.Status = true;
                 }
             }
 

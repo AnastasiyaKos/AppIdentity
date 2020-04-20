@@ -10,16 +10,19 @@
 <head>
     <title>List of users</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/userPage.css" />
+    <link rel="stylesheet" href="~/css/usersPage.css" />
+    <link rel="stylesheet" href="~/css/mainContent.css" />
 </head>
 <body class="user-page">
-    <div class="flex-conteiner">
+    <div class="flex-container">
         <h1>List of users</h1>
         <div class="container">
             <form id="allBoxes" method="post">
-                
+                <button type="button" class="btn btn-light" asp-action="Delete">Delete</button>
+                <button type="button" class="btn btn-light" asp-action="Block">Block</button>
+                <button type="button" class="btn btn-light" asp-action="Unblock">Unblock</button>
                 <table class="table">
-                    <thead class="thead-dark">
+                    <thead class="thead-dark thead">
                         <tr>
                             <th scope="col">
                                 <input type="checkbox" onClick="checkAll()" id="mainCheck" />
@@ -38,10 +41,10 @@
                             </th>
                             <th>
                                 <button type="button" class="btn btn-light" asp-action="Unblock">Unblock</button>
-                             </th>
+                            </th>
                             @*<th>
-                                <button type="button" class="btn btn-dark" asp-action="Logout">Log out</button>
-                            </th>*@
+                        <button type="button" class="btn btn-dark" asp-action="Logout">Log out</button>
+                    </th>*@
                         </tr>
                     </thead>
                     <tbody class="">
