@@ -80,6 +80,7 @@ namespace AppIdentity.Controllers
                 {
                     _appUsersDbContext.Users.Update(user).Entity.Banned = true;
                     _appUsersDbContext.Users.Update(user).Entity.Status = false;
+                    _appUsersDbContext.Users.Update(user).Entity.LastVisit = DateTime.Now;
 
                 }
             }
@@ -102,7 +103,22 @@ namespace AppIdentity.Controllers
                 if (checkedId.Contains(user.Id))
                 {
                     _appUsersDbContext.Users.Update(user).Entity.Banned = false;
-                    _appUsersDbContext.Users.Update(user).Entity.Status = true;
+                }
+            }
+
+            _appUsersDbContext.SaveChanges();
+
+            return RedirectToAction("Users");
+        }
+
+        public IActionResult Logout(List<string> checkedId)
+        {
+            foreach (AppUser user in _appUsersDbContext.Users)
+            {
+                if (checkedId.Contains(user.Id))
+                {
+                    _appUsersDbContext.Users.Update(user).Entity.Status = false;
+                    _appUsersDbContext.Users.Update(user).Entity.LastVisit = DateTime.Now;
                 }
             }
 

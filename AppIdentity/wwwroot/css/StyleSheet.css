@@ -1,40 +1,30 @@
-﻿html, 
-body,
-header {
-    background-color: #cee0ab;
-}
-
-.user-page {
+﻿.user-page {
     min-height: 650px;
 }
 
 .register-page,
 .user-page,
-.login-page {
+.login-page,
+.layout {
     background-image: url("https://img2.akspic.com/image/135046-rastitelnost-list-vetv-zelenyj-zavod-2560x1440.jpg");
 }
 
-.register-page .flex-container,
-.login-page .flex-container,
-.user-page .flex-container {
-    display: flex;
-    flex-direction: column;
-}
 
 .row {
     min-height: 550px;
 }
 
-.login-page .flex-container,
-.register-page .flex-container {
+main{
+    margin-top: 30px;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
     padding: 30px;
     background-color: #cee0ab;
     box-shadow: 0 0 15px #201f1f;
     border-radius: 5px;
-}
-.register-page .flex-container {
-    margin-top: 30px;
-    margin-bottom: 20px;
 }
 
 .flex-container h1 {
@@ -65,19 +55,12 @@ a {
     color: #544234;
 }
 
-a:hover {
-    color: #332820;
-}
+    a:hover {
+        color: #332820;
+    }
 
 .table,
 .thead {
     background-color: beige;
     border-radius: 15px;
 }
-
-.footer {
-    background-color: #cee0ab;
-}
-
-
-
