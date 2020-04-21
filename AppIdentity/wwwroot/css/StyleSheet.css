@@ -55,9 +55,50 @@ a {
     color: #544234;
 }
 
-    a:hover {
-        color: #332820;
-    }
+a:hover {
+    color: #332820;
+}
+
+.button-box {
+    display: flex;
+}
+
+.button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 32px;
+    height: 32px;
+    margin: 0 0 0 5px;
+    font: inherit;
+    color: inherit;
+    
+    border: none;
+    background-color: #343a40;
+    border-radius: 3px;
+    
+}
+.btn-dark {
+    margin-bottom: 5px;
+}
+
+.button-delete {
+    background-image: url(img/del.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.button-block {
+    background-image: url(img/disturb.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.button-block svg{
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 30px;
+}
 
 .table,
 .thead {

@@ -17,14 +17,16 @@
         <h1>List of users</h1>
         <div class="container">
             <form id="allBoxes" method="post">
-                <button class="btn btn-dark" asp-action="Delete">Delete</button>
-                <button class="btn btn-dark" asp-action="Block">Block</button>
-                <button class="btn btn-dark" asp-action="Unblock">Unblock</button>
+                <div class="button-box">
+                    <button class="btn btn-dark" asp-action="Unblock">Unblock</button>
+                    <button class="button button-block" asp-action="Block"></button>
+                    <button class="button button-delete" asp-action="Delete"></button>
+                </div>
                 <table class="table">
                     <thead class="thead-dark thead">
                         <tr>
                             <th scope="col">
-                                <input type="checkbox" onClick="checkAll()" id="mainCheck"/>
+                                <input type="checkbox" onClick="checkAll()" id="mainCheck" />
                             </th>
                             <th scope="col">First name</th>
                             <th scope="col">Last name</th>
