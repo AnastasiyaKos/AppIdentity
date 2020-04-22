@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using System.Security.Claims;
 
 namespace AppIdentity.Areas.Identity.Pages.Account
 {
@@ -80,8 +81,14 @@ namespace AppIdentity.Areas.Identity.Pages.Account
                 var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {
+                    if(_userManager.FindByEmailAsync(Input.Email).Result.Banned)
+                    {
+                        await _signInManager.SignOutAsync();
+                        ModelState.AddModelError(string.Empty, "You are BANNED.");
+                        return Page();
+                    }
                     _logger.LogInformation("User logged in.");
-                    return RedirectToAction("Users", "Home");
+                    return RedirectToAction("Index", "Home");
                 }
                 if (result.RequiresTwoFactor)
                 {

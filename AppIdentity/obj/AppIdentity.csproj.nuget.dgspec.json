@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nasty\\source\\repos\\AppIdentity\\AppIdentity\\AppIdentity.csproj": {}
+    "D:\\Programming\\C#\\Itra\\AppIdentity\\AppIdentity\\AppIdentity.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nasty\\source\\repos\\AppIdentity\\AppIdentity\\AppIdentity.csproj": {
+    "D:\\Programming\\C#\\Itra\\AppIdentity\\AppIdentity\\AppIdentity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nasty\\source\\repos\\AppIdentity\\AppIdentity\\AppIdentity.csproj",
+        "projectUniqueName": "D:\\Programming\\C#\\Itra\\AppIdentity\\AppIdentity\\AppIdentity.csproj",
         "projectName": "AppIdentity",
-        "projectPath": "C:\\Users\\nasty\\source\\repos\\AppIdentity\\AppIdentity\\AppIdentity.csproj",
-        "packagesPath": "C:\\Users\\nasty\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nasty\\source\\repos\\AppIdentity\\AppIdentity\\obj\\",
+        "projectPath": "D:\\Programming\\C#\\Itra\\AppIdentity\\AppIdentity\\AppIdentity.csproj",
+        "packagesPath": "C:\\Users\\alex2\\.nuget\\packages\\",
+        "outputPath": "D:\\Programming\\C#\\Itra\\AppIdentity\\AppIdentity\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\nasty\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\alex2\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
