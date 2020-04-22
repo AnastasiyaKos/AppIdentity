@@ -85,8 +85,9 @@ namespace AppIdentity.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new AppUser { UserName = Input.Email, Email = Input.Email, FirstName = Input.FirstName, 
-                    LastName = Input.LastName, RegistrationDate = DateTime.Now, LastVisit = DateTime.Now,  Status = true};
+                var user = new AppUser { UserName = Input.Email, Email = Input.Email, FirstName = Input.FirstName,
+                    LastName = Input.LastName, RegistrationDate = DateTime.Now, LastVisit = DateTime.Now, Status = true,
+                    Banned = false, EmailConfirmed = true, LockoutEnabled = false };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {
