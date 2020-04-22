@@ -106,25 +106,16 @@ namespace AppIdentity.Controllers
                 }
             }
 
-            _appUsersDbContext.SaveChanges();
+            _appUsersDbContext.SaveChanges(); 
 
             return RedirectToAction("Users");
         }
 
-        public IActionResult Logout(List<string> checkedId)
+        [HttpPost]
+        public IActionResult Test(List<string> checkedId)
         {
-            foreach (AppUser user in _appUsersDbContext.Users)
-            {
-                if (checkedId.Contains(user.Id))
-                {
-                    _appUsersDbContext.Users.Update(user).Entity.Status = false;
-                    _appUsersDbContext.Users.Update(user).Entity.LastVisit = DateTime.Now;
-                }
-            }
-
-            _appUsersDbContext.SaveChanges();
-
-            return RedirectToAction("Users");
+            string user = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            return RedirectToPage("/Account/Logout", new { area = "Identity" } );
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
